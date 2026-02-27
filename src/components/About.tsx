@@ -11,14 +11,33 @@ export const About: React.FC = () => {
     return (
         <section id="about" className="py-20 bg-bg-subtle">
             <div className="container-custom">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="grid md:grid-cols-[1fr_2fr] gap-16 md:gap-24 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="relative flex justify-center md:justify-start"
+                        className="relative hidden md:block"
                     >
-                        <div className="relative w-full max-w-[320px]">
+                        <div className="relative w-full max-w-[280px] ml-auto">
+                            <div className="aspect-[4/5] rounded-2xl overflow-hidden border-4 border-white dark:border-bg-ui shadow-xl">
+                                <img
+                                    src={profilePic}
+                                    alt="Lucas Arroyo"
+                                    className="w-full h-full object-cover brightness-[1.08] contrast-[0.9] saturate-[1.1] sepia-[0.1]"
+                                />
+                            </div>
+                            <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-solid/15 rounded-2xl -z-10 border border-solid/20"></div>
+                        </div>
+                    </motion.div>
+
+                    {/* Mobile Image (centered, smaller) */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="relative block md:hidden mb-12 flex justify-center"
+                    >
+                        <div className="relative w-full max-w-[280px]">
                             <div className="aspect-[4/5] rounded-2xl overflow-hidden border-4 border-white dark:border-bg-ui shadow-xl">
                                 <img
                                     src={profilePic}
@@ -34,17 +53,16 @@ export const About: React.FC = () => {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
+                        className="flex flex-col h-full justify-center"
                     >
                         <h2 className="section-title">
                             Expertise & Vision<span className="text-solid">.</span>
                         </h2>
                         <p className="text-lg text-text-high/80 mb-6 leading-relaxed">
-                            Développeur mobile passionné par la création d'interfaces fluides et d'architectures robustes.
-                            Mon approche combine rigueur technique et sensibilité UX pour livrer des produits performants et maintenables.
+                            Développeur mobile passionné, je me spécialise dans la conception d'applications Android et multiplateformes avec Kotlin Multiplatform. Mon approche allie architecture robuste, expérience utilisateur soignée et performance optimale.
                         </p>
                         <p className="text-lg text-text-high/80 mb-8 leading-relaxed">
-                            Spécialisé dans l'écosystème Android et le multiplateforme, j'accompagne les entreprises dans la migration
-                            vers des technologies modernes comme Jetpack Compose et KMP.
+                            J'accompagne startups et entreprises dans la création de produits mobiles qui font la différence, du MVP à l'application à grande échelle.
                         </p>
 
                         <div className="flex flex-wrap gap-3">
