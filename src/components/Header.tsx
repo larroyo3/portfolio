@@ -20,6 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
     }, []);
 
     const navLinks = [
+        { name: 'À propos', href: '#about' },
         { name: 'Projets', href: '#projects' },
         { name: 'Parcours', href: '#experience' },
         { name: 'Services', href: '#services' },

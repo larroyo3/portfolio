@@ -19,15 +19,28 @@ export const Hero: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="inline-block py-1 px-3 rounded-full bg-bg-ui text-text-low font-medium text-sm mb-6">
-                            Expert Mobile & KMP
-                        </span>
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="flex items-center gap-3 mb-6"
+                        >
+                            <motion.span
+                                initial={{ scaleX: 0 }}
+                                animate={{ scaleX: 1 }}
+                                transition={{ duration: 0.5, delay: 0.5 }}
+                                className="h-px w-12 bg-solid origin-left"
+                            />
+                            <span className="text-sm font-medium text-solid tracking-wider uppercase">
+                                Développeur Mobile Android & KMP
+                            </span>
+                        </motion.div>
                         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                            Concevoir des <span className="text-solid">expériences mobiles</span> d'exception.
+                            Concevoir des <span className="text-solid">expériences mobiles</span> d'exception<span className="text-solid">.</span>
                         </h1>
                         <p className="text-lg md:text-xl text-text-high/80 mb-10 max-w-2xl leading-relaxed">
-                            Bonjour, je suis <span className="font-semibold text-text-high">Lucas Arroyo</span>.
-                            Développeur d'applications mobiles senior spécialisé en Kotlin Multiplatform et architectures modernes.
+                            Bonjour, je suis <span className="font-bold text-solid">Lucas Arroyo</span>.
+                            Développeur d'applications mobiles performantes et intuitives, avec une expertise en Android et Kotlin Multiplatform.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
