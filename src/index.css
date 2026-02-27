@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg-app: var(--bg-app);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-ui: var(--bg-ui);
+  --color-bg-ui-hover: var(--bg-ui-hover);
+  --color-bg-ui-active: var(--bg-ui-active);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-focus: var(--border-focus);
+  --color-border-hover: var(--border-hover);
+  --color-solid: var(--solid);
+  --color-solid-hover: var(--solid-hover);
+  --color-text-low: var(--text-low);
+  --color-text-high: var(--text-high);
+
+  --font-heading: "Outfit", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+:root {
+  /* Light Mode */
+  --bg-app: #FFFCFC;
+  --bg-subtle: #FFF7F7;
+  --bg-ui: #FEEBEC;
+  --bg-ui-hover: #FFDBDC;
+  --bg-ui-active: #FFCDCE;
+  --border-subtle: #FDBDBE;
+  --border-focus: #F4A9AA;
+  --border-hover: #EB8E90;
+  --solid: #E5484D;
+  --solid-hover: #DC3E42;
+  --text-low: #CE2C31;
+  --text-high: #641723;
+}
+
+.dark {
+  /* Dark Mode */
+  --bg-app: #191111;
+  --bg-subtle: #201314;
+  --bg-ui: #3B1219;
+  --bg-ui-hover: #500F1C;
+  --bg-ui-active: #611623;
+  --border-subtle: #72232D;
+  --border-focus: #8C333A;
+  --border-hover: #B54548;
+  --solid: #E5484D;
+  --solid-hover: #EC5D5E;
+  --text-low: #FF9592;
+  --text-high: #FFD1D9;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-app text-text-high font-sans antialiased transition-colors duration-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-solid hover:bg-solid-hover text-white px-6 py-3 rounded-full font-medium transition-all active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-bg-ui border border-border-subtle hover:bg-bg-ui-hover text-text-high px-6 py-3 rounded-full font-medium transition-all active:scale-95;
+  }
+}

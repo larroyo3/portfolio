@@ -1,0 +1,46 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Download } from 'lucide-react';
+
+export const Hero: React.FC = () => {
+    return (
+        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 -z-10 w-1/2 h-full opacity-10">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#E5484D" d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,77.3,-44.7C85.4,-31.3,90.5,-15.7,90.3,-0.1C90.1,15.5,84.6,31,76,44.6C67.4,58.2,55.7,69.9,42.1,77.8C28.5,85.7,14.3,89.8,-0.1,89.9C-14.4,90.1,-28.9,86.2,-42.6,78.5C-56.3,70.8,-69.2,59.3,-77.4,45.7C-85.6,32.1,-89,16,-88.9,0.1C-88.8,-15.8,-85.1,-31.7,-76.7,-45C-68.3,-58.3,-55.1,-69.1,-40.9,-76.1C-26.6,-83,-13.3,-86.1,0.5,-87C14.3,-87.8,28.6,-86.5,44.7,-76.4Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+
+            <div className="container-custom">
+                <div className="max-w-3xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <span className="inline-block py-1 px-3 rounded-full bg-bg-ui text-text-low font-medium text-sm mb-6">
+                            Expert Mobile & KMP
+                        </span>
+                        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                            Concevoir des <span className="text-solid">expériences mobiles</span> d'exception.
+                        </h1>
+                        <p className="text-lg md:text-xl text-text-high/80 mb-10 max-w-2xl leading-relaxed">
+                            Bonjour, je suis <span className="font-semibold text-text-high">Lucas Arroyo</span>.
+                            Développeur d'applications mobiles senior spécialisé en Kotlin Multiplatform et architectures modernes.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a href="#projects" className="btn-primary flex items-center justify-center gap-2">
+                                Voir mes projets <ArrowRight size={18} />
+                            </a>
+                            <a href="/cv.pdf" className="btn-secondary flex items-center justify-center gap-2">
+                                Télécharger mon CV <Download size={18} />
+                            </a>
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+};
