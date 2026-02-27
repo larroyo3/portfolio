@@ -4,8 +4,8 @@ import profilePic from '../assets/profil-pic.png';
 
 export const About: React.FC = () => {
     const skills = [
-        'Kotlin Multiplatform', 'Jetpack Compose', 'SwiftUI',
-        'Architecture (MVVM/MVI)', 'Performance Optimization', 'Clean Code'
+        'Android', 'Kotlin Multiplatform', 'Jetpack Compose', 'Kotlin',
+        'Architecture (MVVM/MVI)', 'Clean Code'
     ];
 
     return (
