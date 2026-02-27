@@ -45,10 +45,10 @@ export const Hero: React.FC = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a href="#projects" className="btn-primary flex items-center justify-center gap-2">
-                                Voir mes projets <ArrowRight size={18} />
+                                Découvrir mes projets
                             </a>
-                            <a href="/cv.pdf" className="btn-secondary flex items-center justify-center gap-2">
-                                Télécharger mon CV <Download size={18} />
+                            <a href="#contact" className="btn-secondary flex items-center justify-center gap-2">
+                                Me contacter <ArrowRight size={18} className="rotate-[-45deg]" />
                             </a>
                         </div>
                     </motion.div>

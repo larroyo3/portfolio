@@ -53,6 +53,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-bg-app text-text-high font-sans antialiased transition-colors duration-200;
   }
@@ -73,10 +77,10 @@
   }
 
   .btn-primary {
-    @apply bg-solid hover:bg-solid-hover text-white px-6 py-3 rounded-full font-medium transition-all active:scale-95;
+    @apply bg-solid hover:bg-solid-hover text-white px-6 py-3 rounded-2xl font-medium transition-all active:scale-95;
   }
 
   .btn-secondary {
-    @apply bg-bg-ui border border-border-subtle hover:bg-bg-ui-hover text-text-high px-6 py-3 rounded-full font-medium transition-all active:scale-95;
+    @apply bg-bg-ui border border-border-subtle hover:bg-bg-ui-hover text-text-high px-6 py-3 rounded-2xl font-medium transition-all active:scale-95;
   }
 }
