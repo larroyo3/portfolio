@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import profilePic from '../assets/profil-pic.png';
 
 export const About: React.FC = () => {
     const skills = [
@@ -8,23 +9,25 @@ export const About: React.FC = () => {
     ];
 
     return (
-        <section id="about" className="py-24 bg-bg-subtle">
+        <section id="about" className="py-20 bg-bg-subtle">
             <div className="container-custom">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="relative"
+                        className="relative flex justify-center md:justify-start"
                     >
-                        <div className="aspect-square rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 border-4 border-white dark:border-bg-ui shadow-xl">
-                            <img
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
-                                alt="Lucas Arroyo"
-                                className="w-full h-full object-cover"
-                            />
+                        <div className="relative w-full max-w-[320px]">
+                            <div className="aspect-[4/5] rounded-2xl overflow-hidden border-4 border-white dark:border-bg-ui shadow-xl">
+                                <img
+                                    src={profilePic}
+                                    alt="Lucas Arroyo"
+                                    className="w-full h-full object-cover brightness-[1.08] contrast-[0.9] saturate-[1.1] sepia-[0.1]"
+                                />
+                            </div>
+                            <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-solid/15 rounded-2xl -z-10 border border-solid/20"></div>
                         </div>
-                        <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-solid rounded-2xl -z-10"></div>
                     </motion.div>
 
                     <motion.div
