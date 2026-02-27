@@ -38,7 +38,9 @@ export const Projects: React.FC = () => {
             <div className="container-custom">
                 <div className="flex justify-between items-end mb-12">
                     <div>
-                        <h2 className="text-4xl font-bold mb-4">Projets Sélectionnés</h2>
+                        <h2 className="section-title mb-4">
+                            Projets Sélectionnés<span className="text-solid">.</span>
+                        </h2>
                         <p className="text-text-high/60 max-w-xl">Une sélection de mes travaux récents, mettant l'accent sur la performance et l'expérience utilisateur.</p>
                     </div>
                     <button className="hidden md:flex items-center gap-2 text-solid font-semibold hover:underline">

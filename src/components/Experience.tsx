@@ -26,7 +26,9 @@ export const Experience: React.FC = () => {
     return (
         <section id="experience" className="py-24 bg-bg-subtle">
             <div className="container-custom">
-                <h2 className="text-3xl font-bold mb-16 text-center">Parcours Professionnel</h2>
+                <h2 className="section-title text-center mb-16">
+                    Parcours Professionnel<span className="text-solid">.</span>
+                </h2>
 
                 <div className="max-w-4xl mx-auto relative">
                     {/* Vertical line */}

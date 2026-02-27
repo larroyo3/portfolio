@@ -30,7 +30,9 @@ export const Services: React.FC = () => {
         <section id="services" className="py-24">
             <div className="container-custom">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold mb-4">Mes Services</h2>
+                    <h2 className="section-title mb-4">
+                        Mes Services<span className="text-solid">.</span>
+                    </h2>
                     <p className="text-text-high/60 max-w-2xl mx-auto">Des solutions sur-mesure pour vos besoins en développement mobile, de la conception à la performance.</p>
                 </div>
 

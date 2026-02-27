@@ -35,7 +35,9 @@ export const About: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl font-bold mb-6">Expertise & Vision</h2>
+                        <h2 className="section-title">
+                            Expertise & Vision<span className="text-solid">.</span>
+                        </h2>
                         <p className="text-lg text-text-high/80 mb-6 leading-relaxed">
                             Développeur mobile passionné par la création d'interfaces fluides et d'architectures robustes.
                             Mon approche combine rigueur technique et sensibilité UX pour livrer des produits performants et maintenables.

@@ -10,7 +10,9 @@ export const Contact: React.FC = () => {
 
                     <div className="md:w-1/3 bg-solid p-12 text-white flex flex-col justify-between">
                         <div>
-                            <h2 className="text-3xl font-bold mb-6">Parlons de votre projet</h2>
+                            <h2 className="text-3xl font-bold mb-6">
+                                Parlons de votre projet<span className="text-white/50">.</span>
+                            </h2>
                             <p className="text-white/80 mb-12">
                                 Disponible pour des missions en freelance ou du conseil technique.
                                 N'hésitez pas à me contacter par email ou à réserver un créneau.

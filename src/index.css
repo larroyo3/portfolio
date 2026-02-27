@@ -83,4 +83,8 @@
   .btn-secondary {
     @apply bg-bg-ui border border-border-subtle hover:bg-bg-ui-hover text-text-high px-6 py-3 rounded-2xl font-medium transition-all active:scale-95;
   }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8;
+  }
 }
