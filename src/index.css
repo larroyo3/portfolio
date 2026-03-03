@@ -61,6 +61,12 @@
     @apply bg-bg-app text-text-high font-sans antialiased transition-colors duration-200;
   }
 
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-text-high/50;
+    opacity: 1;
+  }
+
   h1,
   h2,
   h3,

@@ -121,7 +121,7 @@ export const Contact: React.FC = () => {
                                             initial={{ opacity: 0, y: -10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0 }}
-                                            className="flex items-center gap-2 text-green-600 bg-green-50 p-4 rounded-xl border border-green-100"
+                                            className="flex items-center gap-2 text-green-600 bg-green-50 p-4 rounded-xl border border-green-100 dark:bg-green-950/20 dark:text-green-400 dark:border-green-900/30"
                                         >
                                             <CheckCircle2 size={18} />
                                             <span className="text-sm font-medium">Message envoyé avec succès !</span>
@@ -132,7 +132,7 @@ export const Contact: React.FC = () => {
                                             initial={{ opacity: 0, y: -10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0 }}
-                                            className="flex items-center gap-2 text-red-600 bg-red-50 p-4 rounded-xl border border-red-100"
+                                            className="flex items-center gap-2 text-red-600 bg-red-50 p-4 rounded-xl border border-red-100 dark:bg-red-950/20 dark:text-red-400 dark:border-red-900/30"
                                         >
                                             <AlertCircle size={18} />
                                             <span className="text-sm font-medium">Une erreur est survenue. Veuillez réessayer.</span>
