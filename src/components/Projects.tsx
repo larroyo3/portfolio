@@ -19,7 +19,7 @@ export const Projects: React.FC = () => {
             description: 'Application de randonnée primée avec suivi GPS en temps réel et visualisation des itinéraires.',
             tags: ['Android', 'Kotlin', 'OpenStreetMap'],
             image: thuriiPic,
-            highlight: 'Prix de meilleur projet Epitech Lyon 2023'
+            highlight: 'Prix du meilleur projet Epitech Lyon 2023'
         },
         {
             title: 'Aléa',
