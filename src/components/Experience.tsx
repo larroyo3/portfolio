@@ -46,7 +46,7 @@ export const Experience: React.FC = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-5xl mx-auto"
             >
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-high mb-8 text-center">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-high mb-12 text-center">
                     Parcours<span className="text-solid">.</span>
                 </h2>
                 <div className="max-w-2xl mx-auto space-y-6">
