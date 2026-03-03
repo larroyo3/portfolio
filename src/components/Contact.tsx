@@ -17,10 +17,10 @@ export const Contact: React.FC = () => {
 
         try {
             await emailjs.sendForm(
-                'service_hlo7b2b',
-                'template_ww5ob69', // Template ID
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 formRef.current,
-                'aQVzElRn7PP3_x24B'
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
             setStatus('success');
             formRef.current.reset();
