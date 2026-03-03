@@ -8,7 +8,7 @@ export const Experience: React.FC = () => {
             role: 'Développeur application mobile | Android & KMP',
             period: '2025 - Présent',
             desc: [
-                'Développeur mobile spécialisé en Android (Jetpack Compose) et Kotlin Multiplatform (Compose / SwiftUI).',
+                'Développeur mobile spécialisé en Android (Jetpack Compose) et Kotlin Multiplatform (Jetpack Compose / SwiftUI).',
                 '',
                 'Mon objectif : créer des expériences mobiles fluides, robustes et maintenables, en misant sur des architectures propres et une intégration fluide entre Android et iOS grâce à Kotlin Multiplatform.'
             ]
@@ -38,44 +38,44 @@ export const Experience: React.FC = () => {
     ];
 
     return (
-        <section id="experience" className="py-16 md:py-24 px-6 transition-colors duration-200">
+        <section id="experience" className="py-12 md:py-16 px-6 transition-colors duration-200 scroll-mt-8">
             <motion.div
-                initial={{ opacity: 0, y: 32 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-5xl mx-auto"
             >
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-high mb-12 text-center">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-high mb-8 text-center">
                     Parcours<span className="text-solid">.</span>
                 </h2>
-                <div className="max-w-2xl mx-auto space-y-8">
+                <div className="max-w-2xl mx-auto space-y-6">
                     {experiences.map((exp, i) => (
                         <div key={i} className="relative pl-8 border-l-2 border-border-subtle group">
                             {/* Dot */}
-                            <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-solid border-2 border-bg-app transition-transform duration-300 group-hover:scale-125" />
+                            <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-solid border-2 border-bg-app transition-transform duration-300 group-hover:scale-125" />
 
-                            <p className="text-sm text-text-high/60 mb-1 font-medium">{exp.period}</p>
+                            <p className="text-[12px] text-text-high/60 mb-0.5 font-medium uppercase tracking-wider">{exp.period}</p>
 
                             <h3 className="font-heading font-bold text-lg text-text-high group-hover:text-solid transition-colors duration-200">
                                 {exp.role}
                             </h3>
 
-                            <p className="text-solid font-semibold text-sm mb-3">
+                            <p className="text-solid font-semibold text-sm mb-2">
                                 {exp.company}
                             </p>
 
-                            <ul className="space-y-2">
+                            <div className="space-y-1">
                                 {exp.desc.map((line, j) => (
                                     line === "" ? (
-                                        <li key={j} className="h-2" />
+                                        <div key={j} className="h-2" />
                                     ) : (
-                                        <li key={j} className="text-sm text-text-high/80 leading-relaxed">
+                                        <p key={j} className="text-sm text-text-high/80 leading-snug">
                                             {line}
-                                        </li>
+                                        </p>
                                     )
                                 ))}
-                            </ul>
+                            </div>
                         </div>
                     ))}
                 </div>
