@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Linkedin, Github, Instagram } from 'lucide-react';
 
 export const Hero: React.FC = () => {
     return (
@@ -12,7 +11,26 @@ export const Hero: React.FC = () => {
                 </svg>
             </div>
 
-            <div className="container-custom">
+            <div className="container-custom relative">
+                {/* Social links sidebar */}
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    className="hidden lg:flex flex-col items-center gap-6 absolute -left-12 top-1/2 -translate-y-1/2 -mt-8"
+                >
+                    <a href="https://www.linkedin.com/in/lucas-arroyo/" target="_blank" rel="noopener noreferrer" className="text-text-high/40 hover:text-solid transition-colors p-2">
+                        <Linkedin size={20} />
+                    </a>
+                    <a href="https://github.com/larroyo3" target="_blank" rel="noopener noreferrer" className="text-text-high/40 hover:text-solid transition-colors p-2">
+                        <Github size={20} />
+                    </a>
+                    <a href="https://www.instagram.com/acyll_studios/" target="_blank" rel="noopener noreferrer" className="text-text-high/40 hover:text-solid transition-colors p-2">
+                        <Instagram size={20} />
+                    </a>
+                    <div className="w-px h-12 bg-border-subtle mt-2" />
+                </motion.div>
+
                 <div className="max-w-3xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
