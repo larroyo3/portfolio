@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import profilePic from '../assets/profil-pic.png';
 
 export const About: React.FC = () => {
+    const { t } = useTranslation();
     const skills = [
         'Android', 'Kotlin Multiplatform', 'Jetpack Compose', 'Kotlin',
         'Architecture (MVVM/MVI)', 'Clean Code'
@@ -56,13 +58,13 @@ export const About: React.FC = () => {
                         className="flex flex-col h-full justify-center"
                     >
                         <h2 className="section-title">
-                            Expertise & Vision<span className="text-solid">.</span>
+                            {t('about.title')}<span className="text-solid">.</span>
                         </h2>
                         <p className="text-lg text-text-high/80 mb-6 leading-relaxed">
-                            Développeur mobile passionné, je me spécialise dans la conception d'applications Android et multiplateformes avec Kotlin Multiplatform. Mon approche allie architecture robuste, expérience utilisateur soignée et performance optimale.
+                            {t('about.desc1')}
                         </p>
                         <p className="text-lg text-text-high/80 mb-8 leading-relaxed">
-                            J'accompagne startups et entreprises dans la création de produits mobiles qui font la différence, du MVP à l'application à grande échelle.
+                            {t('about.desc2')}
                         </p>
 
                         <div className="flex flex-wrap gap-3">

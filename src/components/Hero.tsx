@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Linkedin, Github, Instagram } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const Hero: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
             {/* Background decoration */}
@@ -50,23 +53,23 @@ export const Hero: React.FC = () => {
                                 className="h-px w-12 bg-solid origin-left"
                             />
                             <span className="text-sm font-medium text-solid tracking-wider uppercase">
-                                Développeur Mobile Android & KMP
+                                {t('hero.role')}
                             </span>
                         </motion.div>
                         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                            Concevoir des <span className="text-solid">expériences mobiles</span> d'exception<span className="text-solid">.</span>
+                            {t('hero.title')}<span className="text-solid">{t('hero.titleAccent')}</span>{t('hero.titleEnd')}<span className="text-solid">.</span>
                         </h1>
                         <p className="text-lg md:text-xl text-text-high/80 mb-10 max-w-2xl leading-relaxed">
-                            Bonjour, je suis <span className="font-bold text-solid">Lucas Arroyo</span>.
-                            Développeur d'applications mobiles performantes et intuitives, avec une expertise en Android et Kotlin Multiplatform.
+                            {t('hero.description')}<span className="font-bold text-solid">Lucas Arroyo</span>.
+                            {t('hero.descriptionEnd')}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a href="#projects" className="btn-primary flex items-center justify-center gap-2 group">
-                                Découvrir mes projets <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                {t('hero.ctaProjects')} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </a>
                             <a href="#contact" className="btn-secondary flex items-center justify-center gap-2 group">
-                                Me contacter <ArrowRight size={18} className="rotate-[-45deg] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                {t('hero.ctaContact')} <ArrowRight size={18} className="rotate-[-45deg] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </a>
                         </div>
                     </motion.div>

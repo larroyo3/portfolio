@@ -1,39 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export const Experience: React.FC = () => {
+    const { t } = useTranslation();
     const experiences = [
         {
             company: 'Freelance',
-            role: 'Développeur application mobile | Android & KMP',
-            period: '2025 - Présent',
-            desc: [
-                'Développeur mobile spécialisé en Android (Jetpack Compose) et Kotlin Multiplatform (Jetpack Compose / SwiftUI).',
-                '',
-                'Mon objectif : créer des expériences mobiles fluides, robustes et maintenables, en misant sur des architectures propres et une intégration fluide entre Android et iOS grâce à Kotlin Multiplatform.'
-            ]
+            role: t('experience.freelance.role'),
+            period: `2025 - ${t('experience.present')}`,
+            desc: t('experience.freelance.desc').split('\n')
         },
         {
             company: 'Sogelink',
-            role: 'Ingénieur développement',
+            role: t('experience.sogelink.role'),
             period: '2023 - 2025',
-            desc: [
-                'Participation au développement d’une application mobile innovante destinée aux professionnels du BTP, dans le cadre d’un projet stratégique visant à consolider la position de leader de Sogelink sur le marché.',
-                '',
-                'Conception et développement en Kotlin Multiplatform avec Jetpack Compose (Android) et SwiftUI (iOS), dans le respect des bonnes pratiques d’architecture logicielle.',
-            ]
+            desc: t('experience.sogelink.desc').split('\n')
         },
         {
             company: 'Thurii',
-            role: 'Co-fondateur | Android développeur',
+            role: t('experience.thurii.role'),
             period: '2021 - 2024',
-            desc: [
-                'Développement d’une application Android destinée aux amateurs de randonnée, permettant le suivi GPS en temps réel et la visualisation des itinéraires.',
-                '',
-                'Réalisation complète en Kotlin, intégration de la géolocalisation GPS, traçage et enregistrement d’itinéraires, gestion des permissions, et mise en place d’un système de notifications.',
-                '',
-                'Publication réussie sur le Google Play Store avec plus de 50 utilisateurs actifs. Récompensé comme meilleur projet étudiant à Epitech Lyon pour sa qualité technique et son innovation.'
-            ]
+            desc: t('experience.thurii.desc').split('\n')
         }
     ];
 
@@ -47,7 +35,7 @@ export const Experience: React.FC = () => {
                 className="max-w-5xl mx-auto"
             >
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-high mb-12 text-center">
-                    Parcours<span className="text-solid">.</span>
+                    {t('experience.title')}<span className="text-solid">.</span>
                 </h2>
                 <div className="max-w-2xl mx-auto space-y-6">
                     {experiences.map((exp, i) => (

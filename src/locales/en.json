@@ -1,0 +1,102 @@
+{
+    "nav": {
+        "about": "About",
+        "projects": "Projects",
+        "experience": "Journey",
+        "services": "Services",
+        "contact": "Contact"
+    },
+    "hero": {
+        "role": "Android & KMP Mobile Developer",
+        "title": "Designing ",
+        "titleAccent": "exceptional mobile",
+        "titleEnd": " experiences",
+        "description": "Hi, I'm ",
+        "descriptionEnd": "A developer of high-performance and intuitive mobile applications, with expertise in Android and Kotlin Multiplatform.",
+        "ctaProjects": "Discover my projects",
+        "ctaContact": "Contact me"
+    },
+    "about": {
+        "title": "Expertise & Vision",
+        "desc1": "Passionate mobile developer, I specialize in designing Android and multiplatform applications with Kotlin Multiplatform. My approach combines robust architecture, careful user experience, and optimal performance.",
+        "desc2": "I support startups and companies in creating mobile products that make a difference, from MVP to large-scale applications."
+    },
+    "services": {
+        "title": "My Services",
+        "subtitle": "Clear services, adapted to each stage of your mobile project.",
+        "service1": {
+            "title": "Mobile App Development (Android & KMP)",
+            "desc": "Complete design and development of your mobile application, from idea to production on stores."
+        },
+        "service2": {
+            "title": "Bug fixing",
+            "desc": "Diagnosis and resolution of bugs on your existing application. Optimization of performance and stability."
+        },
+        "service3": {
+            "title": "Maintenance & evolutions",
+            "desc": "Continuous support to evolve your application: new features, updates, refactoring."
+        },
+        "cta": "Get a quote"
+    },
+    "projects": {
+        "title": "Projects",
+        "comingSoon": "Coming Soon",
+        "thurii": {
+            "desc": "Award-winning hiking application with real-time GPS tracking and route visualization.",
+            "highlight": "Best Epitech Lyon 2023 project award"
+        },
+        "alea": {
+            "desc": "Project currently under development. Coming very soon to Android and iOS stores."
+        },
+        "plumi": {
+            "desc": "Project currently under development. Coming very soon to Android and iOS stores."
+        }
+    },
+    "experience": {
+        "title": "Journey",
+        "present": "Present",
+        "freelance": {
+            "role": "Mobile App Developer | Android & KMP",
+            "desc": "Mobile developer specialized in Android (Jetpack Compose) and Kotlin Multiplatform (Jetpack Compose / SwiftUI).\n\nMy goal: to create fluid, robust and maintainable mobile experiences, relying on clean architectures and smooth integration between Android and iOS thanks to Kotlin Multiplatform."
+        },
+        "sogelink": {
+            "role": "Development Engineer",
+            "desc": "Participation in the development of an innovative mobile application intended for construction professionals, as part of a strategic project aimed at consolidating Sogelink's leading position on the market.\n\nDesign and development in Kotlin Multiplatform with Jetpack Compose (Android) and SwiftUI (iOS), in compliance with software architecture best practices."
+        },
+        "thurii": {
+            "role": "Co-founder | Android Developer",
+            "desc": "Development of an Android application intended for hiking enthusiasts, allowing real-time GPS tracking and visualization of routes.\n\nFull implementation in Kotlin, integration of GPS geolocation, route tracing and recording, permission management, and implementation of a notification system.\n\nSuccessful publication on the Google Play Store with more than 50 active users. Awarded as best student project at Epitech Lyon for its technical quality and innovation."
+        }
+    },
+    "contact": {
+        "title": "Let's work together",
+        "subtitle": "Have a project in mind? Let's talk about it.",
+        "form": {
+            "name": "Name",
+            "namePlaceholder": "John Doe",
+            "email": "Email",
+            "emailPlaceholder": "john@company.com",
+            "budget": "Budget (Optional)",
+            "budgetPlaceholder": "I don't know / To be defined",
+            "budgetOption1": "Under 5k€",
+            "budgetOption2": "5k€ - 15k€",
+            "budgetOption3": "Over 15k€",
+            "message": "Message",
+            "messagePlaceholder": "Describe your project in a few lines...",
+            "send": "Send",
+            "sending": "Sending...",
+            "success": "Message sent successfully!",
+            "error": "An error occurred. Please try again."
+        },
+        "info": {
+            "title": "Other ways to reach me",
+            "location": "Lyon / Full Remote",
+            "calendly": "Book a meeting",
+            "cv": "Download my CV",
+            "response": "Response within 24h"
+        }
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

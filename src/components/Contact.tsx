@@ -2,8 +2,10 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Calendar, MapPin, Send, ChevronDown, CheckCircle2, AlertCircle, Download } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 export const Contact: React.FC = () => {
+    const { t } = useTranslation();
     const formRef = useRef<HTMLFormElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -37,9 +39,9 @@ export const Contact: React.FC = () => {
             <div className="container-custom">
                 <div className="text-left mb-12">
                     <h2 className="section-title mb-4">
-                        Travaillons ensemble<span className="text-solid">.</span>
+                        {t('contact.title')}<span className="text-solid">.</span>
                     </h2>
-                    <p className="text-text-high/60 max-w-2xl">Vous avez un projet en tête ? Discutons-en.</p>
+                    <p className="text-text-high/60 max-w-2xl">{t('contact.subtitle')}</p>
                 </div>
 
                 <div className="bg-bg-app rounded-3xl border border-border-subtle overflow-hidden shadow-2xl flex flex-col md:flex-row">
@@ -48,50 +50,50 @@ export const Contact: React.FC = () => {
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">Nom</label>
+                                    <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">{t('contact.form.name')}</label>
                                     <input
                                         type="text"
                                         name="user_name"
                                         required
-                                        placeholder="Jean Dupont"
+                                        placeholder={t('contact.form.namePlaceholder')}
                                         className="w-full bg-bg-subtle border border-border-subtle p-4 rounded-xl focus:outline-none focus:border-solid transition-colors"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">Email</label>
+                                    <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">{t('contact.form.email')}</label>
                                     <input
                                         type="email"
                                         name="user_email"
                                         required
-                                        placeholder="jean@entreprise.com"
+                                        placeholder={t('contact.form.emailPlaceholder')}
                                         className="w-full bg-bg-subtle border border-border-subtle p-4 rounded-xl focus:outline-none focus:border-solid transition-colors"
                                     />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">Budget (Optionnel)</label>
+                                <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">{t('contact.form.budget')}</label>
                                 <div className="relative">
                                     <select
                                         name="budget"
                                         className="w-full bg-bg-subtle border border-border-subtle p-4 pr-12 rounded-xl focus:outline-none focus:border-solid transition-colors appearance-none cursor-pointer"
                                     >
-                                        <option value="Non défini" selected>Je ne sais pas / À définir</option>
-                                        <option value="Moins de 5k€">Moins de 5k€</option>
-                                        <option value="5k€ - 15k€">5k€ - 15k€</option>
-                                        <option value="Plus de 15k€">Plus de 15k€</option>
+                                        <option value="Non défini" selected>{t('contact.form.budgetPlaceholder')}</option>
+                                        <option value="Moins de 5k€">{t('contact.form.budgetOption1')}</option>
+                                        <option value="5k€ - 15k€">{t('contact.form.budgetOption2')}</option>
+                                        <option value="Plus de 15k€">{t('contact.form.budgetOption3')}</option>
                                     </select>
                                     <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-text-high/40 pointer-events-none" size={20} />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">Message</label>
+                                <label className="text-sm font-bold text-text-high/70 uppercase tracking-wider">{t('contact.form.message')}</label>
                                 <textarea
                                     name="message"
                                     required
                                     rows={4}
-                                    placeholder="Décrivez votre projet en quelques lignes..."
+                                    placeholder={t('contact.form.messagePlaceholder')}
                                     className="w-full bg-bg-subtle border border-border-subtle p-4 rounded-xl focus:outline-none focus:border-solid transition-colors resize-none"
                                 ></textarea>
                             </div>
@@ -108,10 +110,10 @@ export const Contact: React.FC = () => {
                                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                             </svg>
-                                            Envoi en cours...
+                                            {t('contact.form.sending')}
                                         </span>
                                     ) : (
-                                        <><Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> Envoyer</>
+                                        <><Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> {t('contact.form.send')}</>
                                     )}
                                 </button>
 
@@ -124,7 +126,7 @@ export const Contact: React.FC = () => {
                                             className="flex items-center gap-2 text-green-600 bg-green-50 p-4 rounded-xl border border-green-100 dark:bg-green-950/20 dark:text-green-400 dark:border-green-900/30"
                                         >
                                             <CheckCircle2 size={18} />
-                                            <span className="text-sm font-medium">Message envoyé avec succès !</span>
+                                            <span className="text-sm font-medium">{t('contact.form.success')}</span>
                                         </motion.div>
                                     )}
                                     {status === 'error' && (
@@ -135,7 +137,7 @@ export const Contact: React.FC = () => {
                                             className="flex items-center gap-2 text-red-600 bg-red-50 p-4 rounded-xl border border-red-100 dark:bg-red-950/20 dark:text-red-400 dark:border-red-900/30"
                                         >
                                             <AlertCircle size={18} />
-                                            <span className="text-sm font-medium">Une erreur est survenue. Veuillez réessayer.</span>
+                                            <span className="text-sm font-medium">{t('contact.form.error')}</span>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -147,7 +149,7 @@ export const Contact: React.FC = () => {
                     <div className="md:w-1/3 bg-bg-ui-hover p-12 text-text-high flex flex-col justify-between order-1 md:order-2">
                         <div>
                             <h3 className="text-xl font-bold mb-8">
-                                Autres moyens de me joindre<span className="text-solid"> :</span>
+                                {t('contact.info.title')}<span className="text-solid"> :</span>
                             </h3>
 
                             <div className="space-y-6">
@@ -161,7 +163,7 @@ export const Contact: React.FC = () => {
                                     <div className="w-10 h-10 bg-solid/10 rounded-lg flex items-center justify-center text-solid shrink-0">
                                         <MapPin size={20} />
                                     </div>
-                                    <span className="font-medium text-sm sm:text-base">Lyon / Full Remote</span>
+                                    <span className="font-medium text-sm sm:text-base">{t('contact.info.location')}</span>
                                 </div>
                             </div>
 
@@ -173,7 +175,7 @@ export const Contact: React.FC = () => {
                                     className="w-full flex items-center justify-center gap-2 bg-text-high text-bg-app py-4 rounded-xl font-bold hover:bg-text-high/90 transition-all active:scale-[0.98] group"
                                 >
                                     <Calendar size={18} className="group-hover:rotate-12 transition-transform" />
-                                    Prendre rendez-vous
+                                    {t('contact.info.calendly')}
                                 </a>
 
                                 <a
@@ -182,13 +184,13 @@ export const Contact: React.FC = () => {
                                     className="w-full flex items-center justify-center gap-2 bg-bg-app border border-border-subtle text-text-high py-4 rounded-xl font-bold hover:bg-bg-subtle transition-all active:scale-[0.98] group"
                                 >
                                     <Download size={18} className="group-hover:translate-y-1 transition-transform" />
-                                    Télécharger mon CV
+                                    {t('contact.info.cv')}
                                 </a>
                             </div>
                         </div>
 
                         <div className="mt-12 pt-12 border-t border-border-subtle">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-text-high/60">Réponse sous 24h</p>
+                            <p className="text-xs font-semibold uppercase tracking-wider text-text-high/60">{t('contact.info.response')}</p>
                         </div>
                     </div>
                 </div>

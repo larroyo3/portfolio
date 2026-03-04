@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X, Linkedin, Github, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
     isDarkMode: boolean;
@@ -8,6 +9,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
+    const { t, i18n } = useTranslation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -19,12 +21,17 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const toggleLanguage = () => {
+        const nextLang = i18n.language.startsWith('fr') ? 'en' : 'fr';
+        i18n.changeLanguage(nextLang);
+    };
+
     const navLinks = [
-        { name: 'À propos', href: '#about' },
-        { name: 'Projets', href: '#projects' },
-        { name: 'Parcours', href: '#experience' },
-        { name: 'Services', href: '#services' },
-        { name: 'Contact', href: '#contact' },
+        { name: t('nav.about'), href: '#about' },
+        { name: t('nav.projects'), href: '#projects' },
+        { name: t('nav.experience'), href: '#experience' },
+        { name: t('nav.services'), href: '#services' },
+        { name: t('nav.contact'), href: '#contact' },
     ];
 
     return (
@@ -57,7 +64,13 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
                             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-solid scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
                         </motion.a>
                     ))}
-                    <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-border-subtle">
+                    <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-border-subtle">
+                        <button
+                            onClick={toggleLanguage}
+                            className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded border border-border-subtle hover:border-solid hover:text-solid transition-all text-text-high"
+                        >
+                            {i18n.language.startsWith('fr') ? 'EN' : 'FR'}
+                        </button>
                         <button
                             onClick={toggleDarkMode}
                             className="p-2 rounded-full hover:bg-bg-ui transition-colors text-text-high"

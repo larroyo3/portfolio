@@ -1,22 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Bug, Settings, Code, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const Services: React.FC = () => {
+    const { t } = useTranslation();
     const services = [
         {
-            title: 'Développement d’application mobile (Android & KMP)',
-            desc: "Conception et développement complet de votre application mobile, de l'idée à la mise en production sur les stores.",
+            title: t('services.service1.title'),
+            desc: t('services.service1.desc'),
             icon: <Code className="text-solid" size={20} />
         },
         {
-            title: 'Correction de bugs',
-            desc: 'Diagnostic et résolution de bugs sur votre application existante. Optimisation des performances et de la stabilité.',
+            title: t('services.service2.title'),
+            desc: t('services.service2.desc'),
             icon: <Bug className="text-solid" size={20} />
         },
         {
-            title: 'Maintenance & évolutions',
-            desc: 'Accompagnement continu pour faire évoluer votre application : nouvelles fonctionnalités, mises à jour, refactoring.',
+            title: t('services.service3.title'),
+            desc: t('services.service3.desc'),
             icon: <Settings className="text-solid" size={20} />
         },
     ];
@@ -26,9 +28,9 @@ export const Services: React.FC = () => {
             <div className="container-custom">
                 <div className="text-left mb-16">
                     <h2 className="section-title mb-4">
-                        Mes Services<span className="text-solid">.</span>
+                        {t('services.title')}<span className="text-solid">.</span>
                     </h2>
-                    <p className="text-text-high/60 max-w-2xl">Des prestations claires, adaptées à chaque étape de votre projet mobile.</p>
+                    <p className="text-text-high/60 max-w-2xl">{t('services.subtitle')}</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,7 +54,7 @@ export const Services: React.FC = () => {
                                 href="#contact"
                                 className="mt-auto text-xs font-bold uppercase tracking-widest text-text-low hover:text-solid flex items-center gap-2 transition-colors group"
                             >
-                                Demander un devis <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                {t('services.cta')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </a>
                         </motion.div>
                     ))}

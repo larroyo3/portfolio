@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Award } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import thuriiPic from '../assets/thurii-project.jpg';
 
 interface Project {
@@ -13,24 +14,25 @@ interface Project {
 }
 
 export const Projects: React.FC = () => {
+    const { t } = useTranslation();
     const projects: Project[] = [
         {
             title: 'Thurii',
-            description: 'Application de randonnée primée avec suivi GPS en temps réel et visualisation des itinéraires.',
+            description: t('projects.thurii.desc'),
             tags: ['Android', 'Kotlin', 'OpenStreetMap'],
             image: thuriiPic,
-            highlight: 'Prix du meilleur projet Epitech Lyon 2023'
+            highlight: t('projects.thurii.highlight')
         },
         {
             title: 'Aléa',
-            description: 'Projet en cours de développement. À venir très prochainement sur les stores Android et iOS.',
+            description: t('projects.alea.desc'),
             tags: ['KMP', 'Compose', 'API Google Maps'],
             image: thuriiPic,
             comingSoon: true
         },
         {
             title: 'Plumi',
-            description: 'Projet en cours de développement. À venir très prochainement sur les stores Android et iOS.',
+            description: t('projects.plumi.desc'),
             tags: ['KMP', 'Compose', 'Système de payement'],
             image: thuriiPic,
             comingSoon: true
@@ -47,7 +49,7 @@ export const Projects: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <h2 className="section-title mb-4">
-                            Projets<span className="text-solid">.</span>
+                            {t('projects.title')}<span className="text-solid">.</span>
                         </h2>
                     </motion.div>
                 </div>
@@ -84,7 +86,7 @@ export const Projects: React.FC = () => {
                                             transition={{ duration: 2, repeat: Infinity }}
                                             className="text-sm font-bold text-solid"
                                         >
-                                            À venir
+                                            {t('projects.comingSoon')}
                                         </motion.span>
                                     </div>
                                 )}
