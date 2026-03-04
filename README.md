@@ -1,6 +1,6 @@
 # 📱 Lucas Arroyo — Expert Développement Mobile
 
-Bienvenue sur le dépôt de mon portfolio professionnel. Ce site est une vitrine interactive conçue pour présenter mon expertise en développement mobile (Android, iOS et Kotlin Multiplatform) ainsi que mes réalisations.
+Bienvenue sur le dépôt de mon portfolio professionnel. Ce site est conçue pour présenter mon expertise en développement mobile (Android & Kotlin Multiplatform) ainsi que mes réalisations.
 
 > [!TIP]
 > **Voir le site en ligne** : [Accéder à mon portfolio](https://larroyo3.github.io/portfolio/)
