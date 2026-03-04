@@ -98,5 +98,11 @@
     },
     "footer": {
         "rights": "Tous droits réservés."
+    },
+    "stats": {
+        "projects": "Projets Complétés",
+        "rating": "Note Moyenne",
+        "satisfaction": "Satisfaction Client",
+        "experience": "Années d'Expérience"
     }
 }

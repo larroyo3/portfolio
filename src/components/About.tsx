@@ -2,17 +2,20 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import profilePic from '../assets/profil-pic.png';
+import { FloatingStats } from './FloatingStats';
 
 export const About: React.FC = () => {
     const { t } = useTranslation();
+    const sectionRef = React.useRef<HTMLElement>(null);
     const skills = [
         'Android', 'Kotlin Multiplatform', 'Jetpack Compose', 'Kotlin',
         'Architecture (MVVM/MVI)', 'Clean Code'
     ];
 
     return (
-        <section id="about" className="py-20 bg-bg-subtle">
-            <div className="container-custom">
+        <section id="about" ref={sectionRef} className="py-20 bg-bg-subtle relative overflow-hidden scroll-mt-8">
+            <div className="max-w-4xl ml-auto mr-4 lg:mr-[10%] relative z-10 overflow-visible">
+                <FloatingStats containerRef={sectionRef} />
                 <div className="grid md:grid-cols-[1fr_2fr] gap-16 md:gap-24 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
