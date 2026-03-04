@@ -9,25 +9,49 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 function App() {
-    const [isDarkMode, setIsDarkMode] = useState(() => {
+    const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(() => {
         if (typeof window !== 'undefined') {
-            return localStorage.getItem('theme') === 'dark' ||
-                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            const saved = localStorage.getItem('theme');
+            return (saved as 'light' | 'dark') || 'system';
         }
-        return false;
+        return 'system';
     });
 
-    useEffect(() => {
-        if (isDarkMode) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
-    }, [isDarkMode]);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+        const updateTheme = () => {
+            const shouldBeDark = theme === 'system'
+                ? mediaQuery.matches
+                : theme === 'dark';
+
+            setIsDarkMode(shouldBeDark);
+
+            if (shouldBeDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        };
+
+        updateTheme();
+
+        // Listen for system changes
+        const listener = () => {
+            if (theme === 'system') updateTheme();
+        };
+
+        mediaQuery.addEventListener('change', listener);
+        return () => mediaQuery.removeEventListener('change', listener);
+    }, [theme]);
+
+    const toggleDarkMode = () => {
+        const newTheme = isDarkMode ? 'light' : 'dark';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
 
     return (
         <div className="min-h-screen">
