@@ -41,8 +41,9 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ name, role, company, cont
             viewport={{ once: true, margin: "-100px" }}
             transition={{
                 type: "spring",
-                stiffness: 50,
-                damping: 20,
+                stiffness: 30,
+                damping: 25,
+                mass: 1.5,
                 delay: delay,
             }}
             className="absolute z-20 hidden xl:flex flex-col p-5 rounded-2xl bg-white/10 dark:bg-bg-app/20 backdrop-blur-2xl backdrop-saturate-[180%] border border-white/40 dark:border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] pointer-events-auto cursor-default select-none group w-[340px] overflow-hidden"
@@ -75,8 +76,8 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ name, role, company, cont
                             <Star key={i} size={11} className="text-yellow-400 fill-yellow-400" />
                         ))}
                     </div>
-                    <div className="relative overflow-hidden transition-all duration-500 max-h-[60px] group-hover:max-h-[300px] mb-3">
-                        <p className="text-[13px] text-text-high/90 italic leading-relaxed line-clamp-3 group-hover:line-clamp-none">
+                    <div className="relative overflow-hidden transition-all duration-700 ease-in-out max-h-[63px] group-hover:max-h-[500px] mb-3 [mask-image:linear-gradient(to_bottom,black_40px,transparent)] group-hover:[mask-image:none]">
+                        <p className="text-[13px] text-text-high/90 italic leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-700 delay-700 group-hover:delay-0">
                             "{content}"
                         </p>
                     </div>
