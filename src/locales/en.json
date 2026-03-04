@@ -12,7 +12,7 @@
         "titleAccent": "exceptional mobile",
         "titleEnd": " experiences",
         "description": "Hi, I'm ",
-        "descriptionEnd": "A developer of high-performance and intuitive mobile applications, with expertise in Android and Kotlin Multiplatform.",
+        "descriptionEnd": " A developer of high-performance and intuitive mobile applications, with expertise in Android and Kotlin Multiplatform.",
         "ctaProjects": "Discover my projects",
         "ctaContact": "Contact me"
     },
@@ -33,7 +33,7 @@
             "desc": "Diagnosis and resolution of bugs on your existing application. Optimization of performance and stability."
         },
         "service3": {
-            "title": "Maintenance & evolutions",
+            "title": "Maintenance & upgrades",
             "desc": "Continuous support to evolve your application: new features, updates, refactoring."
         },
         "cta": "Get a quote"

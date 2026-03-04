@@ -57,7 +57,9 @@ export const Hero: React.FC = () => {
                             </span>
                         </motion.div>
                         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                            {t('hero.title')}<span className="text-solid">{t('hero.titleAccent')}</span>{t('hero.titleEnd')}<span className="text-solid">.</span>
+                            {t('hero.title')}
+                            <span className="text-solid">{t('hero.titleAccent')}
+                            </span>{t('hero.titleEnd')}<span className="text-solid">.</span>
                         </h1>
                         <p className="text-lg md:text-xl text-text-high/80 mb-10 max-w-2xl leading-relaxed">
                             {t('hero.description')}<span className="font-bold text-solid">Lucas Arroyo</span>.
