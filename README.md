@@ -7,12 +7,6 @@ Bienvenue sur le dépôt de mon portfolio professionnel. Ce site est une vitrine
 
 ---
 
-## ✨ Points Forts du Projet
-- **Design Premium** : Interface moderne avec gestion native du Dark Mode.
-- **Animations Fluides** : Micro-interactions réalisées avec Framer Motion pour une expérience utilisateur haut de gamme.
-- **Performance** : Score Lighthouse optimisé grâce à l'utilisation de Vite et TypeScript.
-- **Responsive** : Adaptation parfaite sur tous les écrans (Mobile, Tablette, Desktop).
-
 ## 🚀 Technologies Utilisées
 - **Core** : [React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
 - **Styling** : [Tailwind CSS](https://tailwindcss.com/)
@@ -46,10 +40,6 @@ Le projet est configuré pour un déploiement automatique sur **GitHub Pages**.
 
 - **Automatisation** : Un workflow GitHub Actions (`.github/workflows/deploy.yml`) se déclenche à chaque `push` sur la branche `main`.
 - **Hébergement** : Le site est servi depuis la branche `gh-pages`.
-
-## 📝 Personnalisation
-Pour modifier le contenu (projets, expériences, services), éditez les composants correspondants dans le dossier `src/components/`. 
-Les fichiers de styles globaux et les tokens de design se trouvent respectivement dans `src/index.css` et `src/styles/`.
 
 ---
 *Développé avec ❤️ par Lucas Arroyo.*
