@@ -44,11 +44,11 @@ export const Hero: React.FC = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <a href="#projects" className="btn-primary flex items-center justify-center gap-2">
-                                Découvrir mes projets
+                            <a href="#projects" className="btn-primary flex items-center justify-center gap-2 group">
+                                Découvrir mes projets <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </a>
-                            <a href="#contact" className="btn-secondary flex items-center justify-center gap-2">
-                                Me contacter <ArrowRight size={18} className="rotate-[-45deg]" />
+                            <a href="#contact" className="btn-secondary flex items-center justify-center gap-2 group">
+                                Me contacter <ArrowRight size={18} className="rotate-[-45deg] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </a>
                         </div>
                     </motion.div>

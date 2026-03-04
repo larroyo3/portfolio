@@ -50,9 +50,9 @@ export const Services: React.FC = () => {
                             </p>
                             <a
                                 href="#contact"
-                                className="mt-auto text-xs font-bold uppercase tracking-widest text-text-low hover:text-solid flex items-center gap-2 transition-colors"
+                                className="mt-auto text-xs font-bold uppercase tracking-widest text-text-low hover:text-solid flex items-center gap-2 transition-colors group"
                             >
-                                Demander un devis <ArrowRight size={16} />
+                                Demander un devis <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </a>
                         </motion.div>
                     ))}

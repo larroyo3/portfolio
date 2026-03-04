@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Calendar, MapPin, Send, ChevronDown, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Calendar, MapPin, Send, ChevronDown, CheckCircle2, AlertCircle, Download } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 export const Contact: React.FC = () => {
@@ -100,7 +100,7 @@ export const Contact: React.FC = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed group"
                                 >
                                     {isSubmitting ? (
                                         <span className="flex items-center gap-2">
@@ -111,7 +111,7 @@ export const Contact: React.FC = () => {
                                             Envoi en cours...
                                         </span>
                                     ) : (
-                                        <><Send size={18} /> Envoyer</>
+                                        <><Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> Envoyer</>
                                     )}
                                 </button>
 
@@ -147,7 +147,7 @@ export const Contact: React.FC = () => {
                     <div className="md:w-1/3 bg-bg-ui-hover p-12 text-text-high flex flex-col justify-between order-1 md:order-2">
                         <div>
                             <h3 className="text-xl font-bold mb-8">
-                                Autres moyens de me joindre<span className="text-solid">.</span>
+                                Autres moyens de me joindre<span className="text-solid"> :</span>
                             </h3>
 
                             <div className="space-y-6">
@@ -155,25 +155,40 @@ export const Contact: React.FC = () => {
                                     <div className="w-10 h-10 bg-solid/10 rounded-lg flex items-center justify-center text-solid">
                                         <Mail size={20} />
                                     </div>
-                                    <span className="font-medium">lucas@arroyo.dev</span>
+                                    <span className="font-medium text-sm sm:text-base">acyll.studios@gmail.com</span>
                                 </div>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 bg-solid/10 rounded-lg flex items-center justify-center text-solid">
-                                        <Calendar size={20} />
-                                    </div>
-                                    <span className="font-medium">Calendly (disponible)</span>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 bg-solid/10 rounded-lg flex items-center justify-center text-solid">
+                                    <div className="w-10 h-10 bg-solid/10 rounded-lg flex items-center justify-center text-solid shrink-0">
                                         <MapPin size={20} />
                                     </div>
-                                    <span className="font-medium">Paris / Full Remote</span>
+                                    <span className="font-medium text-sm sm:text-base">Lyon / Full Remote</span>
                                 </div>
+                            </div>
+
+                            <div className="mt-10 space-y-4">
+                                <a
+                                    href="https://calendly.com/lucas-arroyo/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full flex items-center justify-center gap-2 bg-text-high text-bg-app py-4 rounded-xl font-bold hover:bg-text-high/90 transition-all active:scale-[0.98] group"
+                                >
+                                    <Calendar size={18} className="group-hover:rotate-12 transition-transform" />
+                                    Prendre rendez-vous
+                                </a>
+
+                                <a
+                                    href="/src/assets/cv_lucas_arroyo.pdf"
+                                    download="CV_Lucas_Arroyo.pdf"
+                                    className="w-full flex items-center justify-center gap-2 bg-bg-app border border-border-subtle text-text-high py-4 rounded-xl font-bold hover:bg-bg-subtle transition-all active:scale-[0.98] group"
+                                >
+                                    <Download size={18} className="group-hover:translate-y-1 transition-transform" />
+                                    Télécharger mon CV
+                                </a>
                             </div>
                         </div>
 
                         <div className="mt-12 pt-12 border-t border-border-subtle">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-text-high/60">Réponse sous 24h à 48h</p>
+                            <p className="text-xs font-semibold uppercase tracking-wider text-text-high/60">Réponse sous 24h</p>
                         </div>
                     </div>
                 </div>
