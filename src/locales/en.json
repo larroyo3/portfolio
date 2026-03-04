@@ -104,5 +104,37 @@
         "rating": "Average Rating",
         "satisfaction": "Client Satisfaction",
         "experience": "Years of Experience"
+    },
+    "testimonials": {
+        "client1": {
+            "name": "Stephane G.",
+            "role": "",
+            "company": "Xifab",
+            "content": "Very good communication, efficient, problem solved in one day, the deliverable worked immediately, no modifications needed 😊 Perfect! Thank you, Lucas!"
+        },
+        "client2": {
+            "name": "Thibault M.",
+            "role": "Project Manager / Team Leader",
+            "company": "Sogelink",
+            "content": "I worked with Lucas at Sogelink, where he demonstrated his skills in cross-platform mobile development. His expertise in Kotlin Multiplatform and his understanding of the specific needs of the construction industry were invaluable to our team. Lucas always demonstrated professionalism and a great ability to collaborate effectively with other team members."
+        },
+        "client3": {
+            "name": "Nadim G.",
+            "role": "Tech Lead Mobile",
+            "company": "Sogelink",
+            "content": "Lucas quickly integrated into our team at Sogelink and made a significant contribution to our mobile projects. His technical skills, particularly in mobile architecture and performance optimization, were particularly noteworthy. He understood and responded to the complex needs of our sector, helping to strengthen our position as a technology leader."
+        },
+        "client4": {
+            "name": "Thibault B.",
+            "role": "Co-founder | Android developer",
+            "company": "Thurii",
+            "content": "I had the pleasure of working with Lucas on the Thurii project. His technical expertise in Android development and his ability to solve complex problems were essential to our success. Lucas demonstrated great rigor and excellent team spirit throughout the project. His work greatly contributed to the quality of our application, which was awarded the prize for best Epitech Lyon project."
+        },
+        "client5": {
+            "name": "Arthur B.",
+            "role": "Co-founder | Back-end developer",
+            "company": "Thurii",
+            "content": "I have had the opportunity to work with Lucas on various projects, including Thurii. Lucas is a passionate developer who gives 100% to bring an idea to life. I highly recommend him for your projects!"
+        }
     }
 }

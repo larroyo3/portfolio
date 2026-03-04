@@ -52,7 +52,7 @@ const StatCard: React.FC<StatProps> = ({ value, label, icon, top, side, delay = 
                 damping: 15,
                 delay: delay,
             }}
-            className={`absolute z-20 hidden xl:flex items-center gap-4 p-4 rounded-2xl bg-white/10 dark:bg-bg-app/20 backdrop-blur-3xl backdrop-saturate-[180%] border border-white/40 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.6)] pointer-events-auto cursor-default select-none group min-w-[180px] overflow-hidden`}
+            className={`absolute z-20 hidden xl:flex items-center gap-4 p-4 rounded-2xl bg-white/10 dark:bg-bg-app/20 backdrop-blur-3xl backdrop-saturate-[180%] border border-white/40 dark:border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] pointer-events-auto cursor-default select-none group min-w-[180px] overflow-hidden`}
         >
             <motion.div
                 whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
@@ -139,6 +139,35 @@ export const FloatingStats: React.FC<{ containerRef: React.RefObject<HTMLElement
         <div className="absolute inset-0 pointer-events-none z-20">
             {stats.map((stat, index) => (
                 <StatCard key={index} {...stat} containerRef={containerRef} />
+            ))}
+        </div>
+    );
+};
+
+export const MobileStats: React.FC = () => {
+    const { t } = useTranslation();
+    const stats = [
+        { value: '5+', label: t('stats.projects'), icon: <Layout size={18} /> },
+        { value: '2+', label: t('stats.experience'), icon: <Briefcase size={18} /> },
+        { value: '100%', label: t('stats.satisfaction'), icon: <Users size={18} /> },
+        { value: '4.9/5', label: t('stats.rating'), icon: <Star size={18} /> }
+    ];
+
+    return (
+        <div className="grid grid-cols-2 gap-4 mt-12 xl:hidden pb-4">
+            {stats.map((stat, i) => (
+                <div key={i} className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white/5 dark:bg-bg-app/20 border border-white/10 dark:border-white/5 shadow-lg relative overflow-hidden group">
+                    <div className="w-12 h-12 rounded-xl bg-solid/10 flex items-center justify-center text-solid mb-4 border border-solid/20 shadow-lg shadow-solid/5 relative z-10">
+                        {stat.icon}
+                    </div>
+                    <div className="text-3xl font-black text-text-high leading-none mb-2 font-heading relative z-10">
+                        {stat.value}
+                    </div>
+                    <div className="text-xs uppercase tracking-widest font-bold text-text-high/60 text-center relative z-10">
+                        {stat.label}
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none opacity-40 mix-blend-overlay" />
+                </div>
             ))}
         </div>
     );

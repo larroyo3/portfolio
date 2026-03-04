@@ -45,8 +45,8 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="bg-bg-app rounded-3xl border border-border-subtle overflow-hidden shadow-2xl flex flex-col md:flex-row">
-                    {/* Form on the left */}
-                    <div className="md:w-2/3 p-12 order-2 md:order-1 border-r border-border-subtle">
+                    {/* Form on the top/left */}
+                    <div className="md:w-2/3 p-12 border-b md:border-b-0 md:border-r border-border-subtle">
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div className="space-y-2">
@@ -145,8 +145,8 @@ export const Contact: React.FC = () => {
                         </form>
                     </div>
 
-                    {/* Info on the right */}
-                    <div className="md:w-1/3 bg-bg-ui-hover p-12 text-text-high flex flex-col justify-between order-1 md:order-2">
+                    {/* Info on the bottom/right */}
+                    <div className="md:w-1/3 bg-bg-ui-hover p-12 text-text-high flex flex-col justify-between">
                         <div>
                             <h3 className="text-xl font-bold mb-8">
                                 {t('contact.info.title')}<span className="text-solid"> :</span>

@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { FloatingTestimonials, MobileTestimonials } from './FloatingTestimonials';
 
 export const Experience: React.FC = () => {
     const { t } = useTranslation();
+    const sectionRef = React.useRef<HTMLElement>(null);
+
     const experiences = [
         {
             company: 'Freelance',
@@ -26,48 +29,68 @@ export const Experience: React.FC = () => {
     ];
 
     return (
-        <section id="experience" className="py-12 md:py-16 px-6 transition-colors duration-200 scroll-mt-8">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="max-w-5xl mx-auto"
-            >
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-high mb-12 text-center">
-                    {t('experience.title')}<span className="text-solid">.</span>
-                </h2>
-                <div className="max-w-2xl mx-auto space-y-6">
+        <section id="experience" ref={sectionRef} className="py-24 bg-bg-subtle relative overflow-hidden scroll-mt-8">
+            <div className="max-w-4xl mx-4 md:ml-auto md:mr-4 lg:mr-[10%] relative z-10 overflow-visible">
+                <FloatingTestimonials containerRef={sectionRef} t={t} />
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-16"
+                >
+                    <h2 className="section-title text-left">
+                        {t('experience.title')}<span className="text-solid">.</span>
+                    </h2>
+                </motion.div>
+
+                <div className="space-y-12 relative">
+                    {/* Vertical Line */}
+                    <div className="absolute left-0 top-2 bottom-2 w-[2px] bg-gradient-to-b from-border-subtle via-solid/30 to-border-subtle" />
+
                     {experiences.map((exp, i) => (
-                        <div key={i} className="relative pl-8 border-l-2 border-border-subtle group">
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="relative pl-10 group"
+                        >
                             {/* Dot */}
-                            <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-solid border-2 border-bg-app transition-transform duration-300 group-hover:scale-125" />
+                            <div className="absolute -left-[5px] top-2 w-[12px] h-[12px] rounded-full bg-bg-app border-2 border-solid group-hover:bg-solid transition-colors duration-300 shadow-[0_0_10px_rgba(var(--color-solid),0.5)]" />
 
-                            <p className="text-[12px] text-text-high/60 mb-0.5 font-medium uppercase tracking-wider">{exp.period}</p>
+                            <div className="bg-bg-app/50 p-6 rounded-2xl border border-white/5 group-hover:border-solid/20 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-solid/5">
+                                <span className="text-[11px] text-solid font-black uppercase tracking-[0.2em] mb-3 block">
+                                    {exp.period}
+                                </span>
 
-                            <h3 className="font-heading font-bold text-lg text-text-high group-hover:text-solid transition-colors duration-200">
-                                {exp.role}
-                            </h3>
+                                <h3 className="font-heading font-black text-xl text-text-high mb-1 group-hover:text-solid transition-colors duration-300">
+                                    {exp.role}
+                                </h3>
 
-                            <p className="text-solid font-semibold text-sm mb-2">
-                                {exp.company}
-                            </p>
+                                <div className="text-text-high/70 font-bold text-sm mb-4 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-solid" />
+                                    {exp.company}
+                                </div>
 
-                            <div className="space-y-1">
-                                {exp.desc.map((line, j) => (
-                                    line === "" ? (
-                                        <div key={j} className="h-2" />
-                                    ) : (
-                                        <p key={j} className="text-sm text-text-high/80 leading-snug">
-                                            {line}
-                                        </p>
-                                    )
-                                ))}
+                                <div className="space-y-3">
+                                    {exp.desc.map((line, j) => (
+                                        line === "" ? (
+                                            <div key={j} className="h-1" />
+                                        ) : (
+                                            <p key={j} className="text-[15px] text-text-high/60 leading-relaxed font-medium">
+                                                {line}
+                                            </p>
+                                        )
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-            </motion.div>
+                <MobileTestimonials t={t} />
+            </div>
         </section>
     );
 };

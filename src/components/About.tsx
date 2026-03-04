@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import profilePic from '../assets/profil-pic.png';
-import { FloatingStats } from './FloatingStats';
+import { FloatingStats, MobileStats } from './FloatingStats';
 
 export const About: React.FC = () => {
     const { t } = useTranslation();
@@ -14,7 +14,7 @@ export const About: React.FC = () => {
 
     return (
         <section id="about" ref={sectionRef} className="py-20 bg-bg-subtle relative overflow-hidden scroll-mt-8">
-            <div className="max-w-4xl ml-auto mr-4 lg:mr-[10%] relative z-10 overflow-visible">
+            <div className="max-w-4xl mx-4 md:ml-auto md:mr-4 lg:mr-[10%] relative z-10 overflow-visible">
                 <FloatingStats containerRef={sectionRef} />
                 <div className="grid md:grid-cols-[1fr_2fr] gap-16 md:gap-24 items-center">
                     <motion.div
@@ -80,6 +80,7 @@ export const About: React.FC = () => {
                                 </span>
                             ))}
                         </div>
+                        <MobileStats />
                     </motion.div>
                 </div>
             </div>
