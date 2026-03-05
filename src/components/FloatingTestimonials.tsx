@@ -38,13 +38,13 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ name, role, company, cont
             variants={{
                 hover: { zIndex: 50 }
             }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{
                 type: "spring",
-                stiffness: 30,
-                damping: 25,
-                mass: 1.5,
-                delay: delay,
+                stiffness: 40,
+                damping: 20,
+                mass: 1,
+                delay: delay * 0.5,
             }}
             className="absolute z-20 hidden xl:flex flex-col p-5 rounded-2xl bg-white/10 dark:bg-bg-app/20 backdrop-blur-2xl backdrop-saturate-[180%] border border-white/40 dark:border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] pointer-events-auto cursor-default select-none group w-[340px] overflow-hidden"
         >

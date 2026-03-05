@@ -29,7 +29,8 @@ export const Projects: React.FC = () => {
             tags: ['KMP', 'Compose', 'API Google Maps'],
             image: thuriiPic,
             comingSoon: true
-        },
+        }
+        /*
         {
             title: 'Plumi',
             description: t('projects.plumi.desc'),
@@ -37,6 +38,7 @@ export const Projects: React.FC = () => {
             image: thuriiPic,
             comingSoon: true
         }
+            */
     ];
 
     return (
@@ -54,7 +56,7 @@ export const Projects: React.FC = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="flex flex-wrap justify-center gap-6">
                     {projects.map((project, i) => (
                         <motion.div
                             key={project.title}
@@ -63,7 +65,7 @@ export const Projects: React.FC = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.4, delay: i * 0.12 }}
                             whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                            className="group bg-bg-app rounded-2xl overflow-hidden border border-border-subtle hover:border-solid/50 hover:shadow-md transition-all duration-300 relative"
+                            className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group bg-bg-app rounded-2xl overflow-hidden border border-border-subtle hover:border-solid/50 hover:shadow-md transition-all duration-300 relative"
                         >
                             <div className="relative h-48 overflow-hidden">
                                 <motion.img
