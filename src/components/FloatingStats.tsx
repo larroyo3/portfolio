@@ -94,7 +94,7 @@ export const FloatingStats: React.FC<{ containerRef: React.RefObject<HTMLElement
 
     const stats = [
         {
-            value: '5+',
+            value: '6+',
             label: t('stats.projects'),
             icon: <Layout size={18} />,
             top: '12%',
